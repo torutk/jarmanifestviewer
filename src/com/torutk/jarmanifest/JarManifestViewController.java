@@ -1,5 +1,5 @@
 /*
- *
+ *　
  */
 package com.torutk.jarmanifest;
 
@@ -22,6 +22,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
+ * JARマニフェスト表示画面のコントローラクラス。
  *
  * @author TAKAHASHI,Toru
  */
@@ -84,6 +85,7 @@ public class JarManifestViewController implements Initializable {
         }
     }
 
+    // シーングラフに含まれるコントロールの1つを任意に選び、そこから辿ってStageインスタンスを取得する。
     private Stage getStage() {
         return (Stage) label.getScene().getWindow();
     }
