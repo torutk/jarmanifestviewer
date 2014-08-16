@@ -146,7 +146,3 @@
 .button:default:hover {
     -fx-background-color: derive(-fx-focus-color, 30%);
 }
-
-.hbox {
-    -fx-background-color: #1d1d1d;
-}
