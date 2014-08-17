@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import java.util.jar.JarFile;
 import java.util.logging.Logger;
 import static java.util.stream.Collectors.toList;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * JARマニフェスト表示画面のコントローラクラス。
@@ -46,6 +48,14 @@ public class JarManifestViewController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         selectJarFile();
+        setViewEffect();
+    }
+
+    private void setViewEffect() {
+        FadeTransition fader = new FadeTransition(Duration.millis(1500), table);
+        fader.setFromValue(0.0);
+        fader.setToValue(1.0);
+        fader.play();
     }
 
     @Override
